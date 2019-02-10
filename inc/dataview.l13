@@ -1,0 +1,50 @@
+/*------------------------------------------------------------------------------
+
+            DataView English Localization
+
+------------------------------------------------------------------------------*/
+#define __DATAVIEW_LOCALISATION_FILE_INCLUDED__
+#define DL_NEW              "Novo"
+#define DL_EDIT             "Editar"
+#define DL_DELETE           "Apagar"
+#define DL_HEADER           "Cabeçalho"
+#define DL_SORT             "Ordenar"
+#define DL_PAGES            "Paginas"
+#define DL_FILTERS          "Filtros"
+#define DL_LOOK_UP          "Procurar"
+#define DL_EXTERNAL_DATA    "Datas Externos"
+#define DL_IMPORT_CSV_FILE  "Importar CSV"
+#define DL_EXPORT_CSV_FILE  "Exportar CSV"
+#define DL_UNDO_LAST_IMPORT "Desfazer ultima imp."
+#define DL_FIELD_SEPARATOR  "Separador"
+
+#define DL_FIELD_ARRAY_YES_NO_01 "Não"
+#define DL_FIELD_ARRAY_YES_NO_02 "Sim"
+
+#define DL_DIAL             "Marcar"
+#define DL_SELCT_HEADER     "Header"
+
+#define DL_ARRAY_OPERATION_01 "Igual = "
+#define DL_ARRAY_OPERATION_02 "Menor que <"
+#define DL_ARRAY_OPERATION_03 "Maior que >"
+#define DL_ARRAY_OPERATION_04 "Diferente !="
+#define DL_ARRAY_OPERATION_05 "Começa por..."
+#define DL_ARRAY_OPERATION_06 "Acaba em.."
+#define DL_ARRAY_OPERATION_07 "Contêm..."
+
+#define DL_ARRAY_DELETE_POSSIBILITIES_01 "Registo corrente"
+#define DL_ARRAY_DELETE_POSSIBILITIES_02 "Toda a Tabela"
+
+#define DL__str_none        "(Nenhum)"
+#define DL__str_header      "Cabeçalho"
+#define DL__str_sort        "Ordem"
+#define DL__str_pages       "Paginas visiveis"
+#define DL__str_data_report             "Relatorio\nTabela "
+#define DL__str_data_edition            "Edição\nTabela "
+#define DL__str_select_operation        "Selecione Operação"
+#define DL__str_select_filter_to_del    "Selecione Filtro a apagar"
+#define DL__str_delete                  "Apagar :"
+#define DL__str_not_found               "Não encontrado !"
+#define DL__str_error_updating_table    "Erro ao actualizar tabela !"
+
+

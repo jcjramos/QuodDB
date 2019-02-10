@@ -1,0 +1,94 @@
+/**
+*
+* @brief Project specification file for ListDlg application
+*
+* Copyright (c) EMCC Software Ltd 2003
+* @version 1.0
+*/
+
+TARGET  QuodDb.exe
+TARGETTYPE  exe
+UID  0x100039CE 0xA00011DF
+
+SECUREID	  0xA00011DF
+
+EPOCSTACKSIZE 0x5000
+VENDORID 0
+CAPABILITY NONE
+
+// DEFINE FOR DEMO
+MACRO __DEMONSTRATION_VERSION__
+MACRO __NO_COMMON_DIALOGS__
+// Because common dialogs don't work on a 7650 !!!! also on os91
+
+MACRO __OS91__
+
+SOURCEPATH ..\group_os91
+
+START RESOURCE QuodDb.rss
+TARGETPATH \resource\apps
+HEADER
+END
+
+START RESOURCE    quoddb_reg.rss
+#ifdef WINSCW
+TARGETPATH 	  \private\10003a3f\apps
+#else
+TARGETPATH 	  \private\10003a3f\import\apps
+#endif
+END //RESOURCE
+
+
+LANG 01 02 03 04 13
+
+
+SOURCEPATH ..\src
+SOURCE  dbMaster.cpp
+SOURCE  dbDataItem.cpp
+SOURCE  genericCfg.cpp
+SOURCE  listBoxContainer.cpp
+SOURCE  dataView.cpp
+SOURCE  dataViewForm.cpp
+SOURCE  gnFieldQuery.cpp
+SOURCE  csvReader.cpp
+SOURCE  dbImportExport.cpp
+SOURCE  dbManipulator.cpp
+SOURCE  instalationDateChecker.cpp
+//SOURCE  QuodDbApplication.cpp
+SOURCE  QuodDbAppUi.cpp
+//SOURCE  QuodDbDocument.cpp
+SOURCE  QuodDbView.cpp
+SOURCE  QuodDbViewMain.cpp
+SOURCE  QuodDbMaster.cpp
+SOURCE  QuodDbMain.cpp
+SOURCE  QuodDbFieldFormDef.cpp
+SOURCE helloworldbasicdocument.cpp
+SOURCE helloworldbasicapplication.cpp
+SOURCE helloworldbasic.cpp
+
+USERINCLUDE . ..\inc
+
+SYSTEMINCLUDE \epoc32\include
+
+LIBRARY euser.lib apparc.lib cone.lib eikcore.lib
+LIBRARY eikcoctl.lib avkon.lib
+LIBRARY bafl.lib eikctl.lib  estor.lib
+LIBRARY efsrv.lib bitgdi.lib
+LIBRARY edbms.lib
+// Cause of dialogs & forms
+LIBRARY eikdlg.lib
+LIBRARY gdi.lib 
+
+// Creates Mbm file.
+START BITMAP    QuodDb.mbm
+HEADER
+TARGETPATH      \resource\apps
+SOURCEPATH      ..\bitmaps
+SOURCE          C12 1Player.bmp
+SOURCE          C12 2Player.bmp
+SOURCE          C12 1Player_mask.bmp
+SOURCE          C12 2Player_mask.bmp
+END
+
+
+// End of File

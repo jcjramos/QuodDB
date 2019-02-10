@@ -1,0 +1,30 @@
+{***** Mobile project options file *****}
+{***** File is maintained by IDE. Changes may be lost. *****}
+
+
+[Settings]
+SDK=2
+BUILD=1
+UID2=0x100039CE
+UID3=0x102010FB
+NAME=Series 60 SDK 1.2 for Symbian OS
+BLDINF=bld.inf
+Compiled=1
+SIS=-1
+TargetPath=\system\apps\QuodDb
+VerboseBuild=0
+AllowUnfrozen=0
+UseCodeGuard=0
+PKG=C:\prj\Symbian\QuodDB\group\QuodDb.pkg
+[PathList]
+Count=4
+0=C:\Symbian\Series60_1_2_B\Epoc32\Tools
+1=C:\Symbian\Series60_1_2_B\Epoc32\gcc\bin
+2=C:\PROGRA~1\Borland\CBUILD~1\bin
+3=C:\Perl\bin
+[EnvList]
+Count=1
+0=EPOCROOT=\Symbian\Series60_1_2_B\
+[Targets]
+Count=1
+0=QuodDb.app

@@ -1,0 +1,35 @@
+
+&EN,FR,GE,SP,PO
+
+; targetapp (QuodDb)
+; target directory \Symbian\Series60_1_2_B\epoc32\release\armi\urel\
+; Header
+
+#{"QuodDb","QuodDb","QuodDb","QuodDb","QuodDb"},(0xA00011DF),1,9,0,TYPE=SISAPP
+
+[0x101F7961], 0, 0, 0, {"Series60ProductID","Series60ProductID","Series60ProductID","Series60ProductID","Series60ProductID"}
+
+%{"QuodSoftware","QuodSoftware","QuodSoftware","QuodSoftware","QuodSoftware"}
+
+;Unique Vendor name
+:"QuodSoftware"
+
+
+"license.txt"-"",FT,TA
+
+; mmpfile: QuodDb.mmp
+; targets
+; target: QuodDb.app
+"C:\Symbian\9.1\S60_3rd\epoc32\release\gcce\urel\QuodDb.exe"-"!:\sys\bin\QuodDb.exe"
+
+"C:\Symbian\9.1\S60_3rd\epoc32\data\z\resource\apps\QuodDb.mbm"-"!:\resource\apps\QuodDb\QuodDb.mbm"
+; languages
+"C:\Symbian\9.1\S60_3rd\epoc32\data\z\resource\apps\QuodDb.R01"-"!:\resource\apps\QuodDb.R01"
+"C:\Symbian\9.1\S60_3rd\epoc32\data\z\resource\apps\QuodDb.R02"-"!:\resource\apps\QuodDb.R02"
+"C:\Symbian\9.1\S60_3rd\epoc32\data\z\resource\apps\QuodDb.R03"-"!:\resource\apps\QuodDb.R03"
+"C:\Symbian\9.1\S60_3rd\epoc32\data\z\resource\apps\QuodDb.R04"-"!:\resource\apps\QuodDb.R04"
+"C:\Symbian\9.1\S60_3rd\epoc32\data\z\resource\apps\QuodDb.R13"-"!:\resource\apps\QuodDb.R13"
+"C:\Symbian\9.1\S60_3rd\epoc32\data\z\resource\apps\QuodDb_aif.mif"-"!:\resource\apps\QuodDb_aif.mif"
+
+"C:\Symbian\9.1\S60_3rd\epoc32\data\z\private\10003a3f\import\apps\QuodDB_reg.r01"  -"!:\private\10003a3f\import\apps\QuodDB_reg.rsc"
+; end of pkg file

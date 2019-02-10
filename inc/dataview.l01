@@ -1,0 +1,50 @@
+/*------------------------------------------------------------------------------
+
+            DataView English Localization
+
+------------------------------------------------------------------------------*/
+#define __DATAVIEW_LOCALISATION_FILE_INCLUDED__
+#define DL_NEW              "New"
+#define DL_EDIT             "Edit"
+#define DL_DELETE           "Delete"
+#define DL_HEADER           "Header"
+#define DL_SORT             "Sort"
+#define DL_PAGES            "Pages"
+#define DL_FILTERS          "Filters"
+#define DL_LOOK_UP          "Lookup"
+#define DL_EXTERNAL_DATA    "External Data"
+#define DL_IMPORT_CSV_FILE  "Import CSV File"
+#define DL_EXPORT_CSV_FILE  "Export CSV File"
+#define DL_UNDO_LAST_IMPORT "Undo last import"
+#define DL_FIELD_SEPARATOR  "Field separator"
+
+#define DL_FIELD_ARRAY_YES_NO_01 "No"
+#define DL_FIELD_ARRAY_YES_NO_02 "Yes"
+
+#define DL_DIAL             "Dial"
+#define DL_SELCT_HEADER     "Select Header"
+
+#define DL_ARRAY_OPERATION_01 "Equal = "
+#define DL_ARRAY_OPERATION_02 "Less Than <"
+#define DL_ARRAY_OPERATION_03 "Greater Than >"
+#define DL_ARRAY_OPERATION_04 "Diferent !="
+#define DL_ARRAY_OPERATION_05 "Starts by..."
+#define DL_ARRAY_OPERATION_06 "Ends by.."
+#define DL_ARRAY_OPERATION_07 "Contains..."
+
+#define DL_ARRAY_DELETE_POSSIBILITIES_01 "Current Record"
+#define DL_ARRAY_DELETE_POSSIBILITIES_02 "All Table"
+
+#define DL__str_none        "(none)"
+#define DL__str_header      "Select header field"
+#define DL__str_sort        "Select sort field"
+#define DL__str_pages       "Select Visible Pages"
+#define DL__str_data_report             "Data Report\nTable "
+#define DL__str_data_edition            "Data Edition\nTable "
+#define DL__str_select_operation        "Select Operation"
+#define DL__str_select_filter_to_del    "Select Filter to Delete"
+#define DL__str_delete                  "Delete :"
+#define DL__str_not_found               "Not found !"
+#define DL__str_error_updating_table    "Error updating table !"
+
+

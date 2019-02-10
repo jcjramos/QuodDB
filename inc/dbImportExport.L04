@@ -1,0 +1,21 @@
+/*------------------------------------------------------------------------------
+
+        Import Export English Localisation
+
+------------------------------------------------------------------------------*/
+
+#define __IMPORT_EXPORT_ENGLISH_LOCALISATION_INCLUDED___
+
+#define DVL_CHOOSE_MEMORY       "Elija La Memoria"
+#define DVL_SELECT_A_FILE       "Seleccione un archivo"
+#define DVL_SELECT_SEPARATOR     "Seleccione El Separador"
+
+
+#define DVL_IMPEXP_ARRAY_SEPARATOR_01 "Coma (,)"
+#define DVL_IMPEXP_ARRAY_SEPARATOR_02 "Punto y coma (;)"
+#define DVL_IMPEXP_ARRAY_SEPARATOR_03 "Tab"
+#define DVL_IMPEXP_ARRAY_SEPARATOR_04 "Espacio"
+
+#define DVL_r_db_import_export_str_error "Error!"
+#define DVL_r_db_import_export_str_invalid_format "Formato inválido, se cerciora de por favor que el encabezamiento de CSV empareje con los campos de la tabla."
+

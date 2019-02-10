@@ -1,0 +1,19 @@
+/**
+* 
+* @brief RSS for creating the aif file for ListDlg.
+*
+* Copyright (c) EMCC Software Ltd 2003
+* @version 1.0
+*/
+
+#include <aiftool.rh>
+
+RESOURCE AIF_DATA
+	{
+	app_uid=0x102010FB;
+	num_icons=2;
+	embeddability=KAppNotEmbeddable;
+	newfile=KAppDoesNotSupportNewFile;
+	}
+
+// End of File

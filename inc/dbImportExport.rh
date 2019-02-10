@@ -1,0 +1,192 @@
+/*
+        DB Import Export related Resouces ... used by the DbImportExport
+        classe, not a full RSS file please include it in you application RSS.
+
+        ( Please include CommonDialogs.lib in you app ).
+        
+        JCR 3.2004
+*/
+// ---------------------------------------------------------
+//
+//	Common DIalogs
+//
+// ---------------------------------------------------------
+
+#include "commonDialogs.hrh"
+#include "commonDialogs.rh"
+
+#ifndef __IMPORT_EXPORT_ENGLISH_LOCALISATION_INCLUDED___
+#error PLEASe include dbImportExport.Lxx in your localisation file
+#endif
+
+
+RESOURCE MEMORYSELECTIONDIALOG r_data_view_csv_memory_selection_dialog
+{
+    title = DVL_CHOOSE_MEMORY; //"Choose Memory";
+    locations =
+    {
+        LOCATION { root_path = "C:\\"; },
+        LOCATION { root_path = "E:\\"; }
+    };
+}
+
+
+RESOURCE FILESELECTIONDIALOG r_data_view_csv_selection_dialog
+{
+    title = DVL_SELECT_A_FILE; //"Select a File";
+//    root_path = "C:\\";
+    filters =
+    {
+        FILTER
+        {
+            filter_type = EFilenameFilter;
+            filter_style = EInclusiveFilter;
+            filter_data = { "*.csv" , "*.txt" };
+        }
+    };
+}
+
+
+//-----------------------------------------------------------------------------
+//
+//    r_db_import_export List Query
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_db_import_export_separator_query
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtListQueryControl;
+            id = EListQueryControl;
+            control = AVKON_LIST_QUERY_CONTROL
+                {
+                listtype = EAknCtSinglePopupMenuListBox;
+                listbox = LISTBOX
+                    {
+                    flags = EAknListBoxMenuList;
+                    height = 3;
+                    width = 3;
+                    array_id = r_db_import_export_array_separator;
+                    };
+                heading = DVL_SELECT_SEPARATOR; //"Select Separator";
+                };
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    r_db_import_export SDK 0.9 compatibility - Private File Query Dialogs
+//
+//-----------------------------------------------------------------------------
+
+RESOURCE DIALOG r_db_import_export_query_text_dialog
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control = AVKON_DATA_QUERY
+                {
+                layout = EDataLayout;
+                label = "";
+                control = EDWIN
+                    {
+                    flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                    width = AKNEXQUERY_EDWIN_WIDTH;
+                    lines = AKNEXQUERY_EDWIN_LINES;
+                    maxlength = AKNEXQUERY_EDWIN_SHORT_MAXLENGTH;
+                    };
+                };
+            }
+        };
+    }
+RESOURCE DIALOG r_db_import_export_file_query
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtListQueryControl;
+            id = EListQueryControl;
+            control = AVKON_LIST_QUERY_CONTROL
+                {
+                listtype = EAknCtSinglePopupMenuListBox;
+                listbox = LISTBOX
+                    {
+                    flags = EAknListBoxMenuList;
+                    height = 3;
+                    width = 3;
+//                  array_id = r_db_import_export_array_separator;
+                    };
+                heading = "";
+                };
+            }
+        };
+    }
+
+// ---------------------------------------------------------
+//
+//	Strings
+//
+// ---------------------------------------------------------
+
+RESOURCE ARRAY r_db_import_export_array_separator
+{
+    items =	{
+    LBUF	{ txt = DVL_IMPEXP_ARRAY_SEPARATOR_01; },
+    LBUF	{ txt = DVL_IMPEXP_ARRAY_SEPARATOR_02; },
+    LBUF	{ txt = DVL_IMPEXP_ARRAY_SEPARATOR_03; },
+    LBUF	{ txt = DVL_IMPEXP_ARRAY_SEPARATOR_04; }
+        };
+}
+
+//-----------------------------------------------------------------------------
+//
+//    r_aknexnote_wait_note_softkey_cancel
+//    Wait note with softkey Cancel.
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_aknexnote_wait_note_softkey_cancel
+	{
+	flags = EAknWaitNoteFlags| EEikDialogFlagWait;
+	buttons = R_AVKON_SOFTKEYS_CANCEL;
+	items =
+		{
+		DLG_LINE
+			{
+			type = EAknCtNote;
+			id = 0x1001;
+			control= AVKON_NOTE
+				{
+				layout = EWaitLayout;
+				singular_label = "Please wait...";
+				animation = R_QGN_GRAF_WAIT_BAR_ANIM;
+				};
+			}
+		};
+	}
+
+// ---------------------------------------------------------
+//
+//	Strings
+//
+// ---------------------------------------------------------
+
+RESOURCE TBUF r_db_import_export_str_error {buf = DVL_r_db_import_export_str_error; }
+RESOURCE TBUF r_db_import_export_str_invalid_format {buf = DVL_r_db_import_export_str_invalid_format; }
+RESOURCE TBUF r_db_import_export_str_done {buf = "Done !"; }
+RESOURCE TBUF r_db_import_export_str_select_file {buf = "Select File"; }
+RESOURCE TBUF r_db_import_export_str_file_name   {buf = "File name"; }

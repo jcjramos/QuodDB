@@ -1,0 +1,44 @@
+/**
+* 
+* @brief Definitions of languages for ListDlg application
+*
+* Copyright (c) EMCC Software Ltd 2003
+* @version 1.0
+*/
+
+#ifdef LANGUAGE_01 //English
+#include "QuodDb.l01"
+#include "Dataview.l01"
+#include "dbImportExport.l01"
+#include "gnFieldQuery.l01"
+#endif
+
+#ifdef LANGUAGE_02 //French
+#include "QuodDb.l02"
+#include "Dataview.l02"
+#include "dbImportExport.l02"
+#include "gnFieldQuery.l02"
+#endif
+
+#ifdef LANGUAGE_03 //German
+#include "QuodDb.l03"
+#include "Dataview.l03"
+#include "dbImportExport.l01"
+#include "gnFieldQuery.l01"
+#endif
+
+#ifdef LANGUAGE_04 //Spanish
+#include "QuodDb.l04"
+#include "Dataview.l04"
+#include "dbImportExport.l04"
+#include "gnFieldQuery.l04"
+#endif
+
+#ifdef LANGUAGE_13 //Portuguese
+#include "QuodDb.l13"
+#include "Dataview.l13"
+#include "dbImportExport.l13"
+#include "gnFieldQuery.l13"
+#endif
+
+// End of File

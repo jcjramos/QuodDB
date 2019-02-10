@@ -1,0 +1,50 @@
+/*------------------------------------------------------------------------------
+
+            DataView English Localization
+
+------------------------------------------------------------------------------*/
+#define __DATAVIEW_LOCALISATION_FILE_INCLUDED__
+#define DL_NEW              "Nouveau"
+#define DL_EDIT             "Éditer"
+#define DL_DELETE           "Effacer"
+#define DL_HEADER           "En-tête"
+#define DL_SORT             "Ordonner"
+#define DL_PAGES            "Pages"
+#define DL_FILTERS          "Filtres"
+#define DL_LOOK_UP          "Recherche"
+#define DL_EXTERNAL_DATA    "Externe"
+#define DL_IMPORT_CSV_FILE  "Importer CSV dossier"
+#define DL_EXPORT_CSV_FILE  "Exporter CSV dossier"
+#define DL_UNDO_LAST_IMPORT "Défaites dernier imp."
+#define DL_FIELD_SEPARATOR  "Séparateur"
+
+#define DL_FIELD_ARRAY_YES_NO_01 "Non"
+#define DL_FIELD_ARRAY_YES_NO_02 "Oui"
+
+#define DL_DIAL             "Téléphoner"
+#define DL_SELCT_HEADER     "En-tête"
+
+#define DL_ARRAY_OPERATION_01 "Égal = "
+#define DL_ARRAY_OPERATION_02 "Moins que <"
+#define DL_ARRAY_OPERATION_03 "Plus grand que >"
+#define DL_ARRAY_OPERATION_04 "Diferent !="
+#define DL_ARRAY_OPERATION_05 "Commencer par..."
+#define DL_ARRAY_OPERATION_06 "Terminer par..."
+#define DL_ARRAY_OPERATION_07 "Contient..."
+
+#define DL_ARRAY_DELETE_POSSIBILITIES_01 "Ligne courant"
+#define DL_ARRAY_DELETE_POSSIBILITIES_02 "Toute la table"
+
+#define DL__str_none        "(aucun)"
+#define DL__str_header      "Selecioner En-tête"
+#define DL__str_sort        "Selecioner Ordre"
+#define DL__str_pages       "Pages Visibles"
+#define DL__str_data_report             "Rapports\nTable "
+#define DL__str_data_edition            "Éditer Données\nTable "
+#define DL__str_select_operation        "Operation"
+#define DL__str_select_filter_to_del    "Filter a Effacer"
+#define DL__str_delete                  "Effacer :"
+#define DL__str_not_found               "Pas trouve !"
+#define DL__str_error_updating_table    "Erreur lors de la actualisation de la table !"
+
+

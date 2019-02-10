@@ -1,0 +1,13 @@
+/*------------------------------------------------------------------------------
+
+        Field Query English Localisation
+
+------------------------------------------------------------------------------*/
+#define __GN_FIELD_QUERY_LOCALISATION_FILE__
+
+#define GFL_TEXT "Text:"
+#define GFL_DATE "Date:"
+#define GFL_TIME "Time:"
+#define GFL_NUMBER "Number:"
+#define GFL_SELECT_HEADER "Select Header"
+

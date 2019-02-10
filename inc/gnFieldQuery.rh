@@ -1,0 +1,277 @@
+/*
+        GnFieldQuery related Resouces ... used by the dataView related classes
+        not a full RSS file please include it in you application RSS file if
+        you use GnFieldQuery.cpp .
+
+        JCR 3.2004
+*/
+#ifndef ___GNFIELDQUERY_RSS____
+#define ___GNFIELDQUERY_RSS____
+
+#ifndef __GN_FIELD_QUERY_LOCALISATION_FILE__
+#error PLEASE INCLUDE gnFieldQuery.Lxx in your project
+#endif
+
+//  CONSTANTS
+#define GNFIELDQUERY_ONELINE_DATAQUERY_LINES 1
+#define GNFIELDQUERY_EDWIN_WIDTH 5
+#define GNFIELDQUERY_EDWIN_LINES 5
+#define GNFIELDQUERY_EDWIN_MAXLENGTH 128
+#define GNFIELDQUERY_EDWIN_SHORT_MAXLENGTH 8
+#define GNFIELDQUERY_SECRETED_NUM_LETTERS 8
+#define GNFIELDQUERY_DATE_EDITOR_MIN_DATE 1986
+#define GNFIELDQUERY_DATE_EDITOR_MAX_DATE 2986
+#define GNFIELDQUERY_DATE_EDITOR_FLAGS 0
+#define GNFIELDQUERY_TIME_EDITOR_MIN_SECOND 0
+#define GNFIELDQUERY_TIME_EDITOR_MIN_MINUTE 0
+#define GNFIELDQUERY_TIME_EDITOR_MIN_HOUR 0
+#define GNFIELDQUERY_TIME_EDITOR_MAX_SECOND 59
+#define GNFIELDQUERY_TIME_EDITOR_MAX_MINUTE 59
+#define GNFIELDQUERY_TIME_EDITOR_MAX_HOUR 23
+#define GNFIELDQUERY_DURATION_EDITOR_MAX_SECOND 3599
+#define GNFIELDQUERY_DURATION_EDITOR_FLAGS 0
+#define GNFIELDQUERY_NUMBER_EDITOR_MIN 0
+#define GNFIELDQUERY_NUMBER_EDITOR_MAX 1000000
+#define GNFIELDQUERY_BITMAP_MASK_FLAG 0xFFFF
+#define GNFIELDQUERY_LISTBOX_HEIGHT 3
+#define GNFIELDQUERY_LISTBOX_WIDTH 3
+
+//------------------------------------------------------------------------------
+// TEXT INPUT
+//------------------------------------------------------------------------------
+RESOURCE DIALOG r_gnfieldquery_data_query
+    {
+    flags = EGeneralQueryFlags;
+//      flags = EEikDialogFlagNoDrag | EEikDialogFlagNoTitleBar | EEikDialogFlagCbaButtons;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control = AVKON_DATA_QUERY
+                {
+                layout = EDataLayout;
+                label = GFL_TEXT;
+                control = EDWIN
+                    {
+                    flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                    width = GNFIELDQUERY_EDWIN_WIDTH;
+                    // lines = GNFIELDQUERY_EDWIN_LINES;
+                    maxlength = GNFIELDQUERY_EDWIN_MAXLENGTH;
+                    // added to limit expanding in forms.
+                    // If you want full screen use 6 here
+                    max_view_height_in_lines = GNFIELDQUERY_EDWIN_LINES;
+                    // if you have the line above, you must have this.
+                    // It's calculable from LAF
+                    base_line_delta = 21;
+                    };
+                };
+            }
+        };
+    }
+//------------------------------------------------------------------------------
+// TEXT INPUT
+//------------------------------------------------------------------------------
+RESOURCE DIALOG r_gnfieldquery_bignumber_query
+    {
+    flags = EGeneralQueryFlags;
+//      flags = EEikDialogFlagNoDrag | EEikDialogFlagNoTitleBar | EEikDialogFlagCbaButtons;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control = AVKON_DATA_QUERY
+                {
+                layout = EPhoneLayout; //ENumberLayout;
+                label = GFL_TEXT;
+                control = EDWIN
+                    {
+                    flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                    width = GNFIELDQUERY_EDWIN_WIDTH;
+                    // lines = GNFIELDQUERY_EDWIN_LINES;
+                    maxlength = GNFIELDQUERY_EDWIN_MAXLENGTH;
+                    // added to limit expanding in forms.
+                    // If you want full screen use 6 here
+                    max_view_height_in_lines = GNFIELDQUERY_EDWIN_LINES;
+                    // if you have the line above, you must have this.
+                    // It's calculable from LAF
+                    base_line_delta = 21;
+                    };
+                };
+            }
+        };
+    }
+
+//------------------------------------------------------------------------------
+// DATE INPUT
+//------------------------------------------------------------------------------
+
+RESOURCE DIALOG r_gnfieldquery_date_query
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control = AVKON_DATA_QUERY
+                {
+                layout = EDateLayout;
+                label = GFL_DATE;
+                control = DATE_EDITOR
+                    {
+                    minDate = DATE
+                        {
+                        year = GNFIELDQUERY_DATE_EDITOR_MIN_DATE;
+                        };
+                    maxDate = DATE
+                        {
+                        year = GNFIELDQUERY_DATE_EDITOR_MAX_DATE;
+                        };
+                    flags = GNFIELDQUERY_DATE_EDITOR_FLAGS;
+                    };
+                };
+            }
+        };
+    }
+
+
+//------------------------------------------------------------------------------
+// DATE INPUT
+//------------------------------------------------------------------------------
+
+RESOURCE DIALOG r_gnfieldquery_date_query_ex
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control = AVKON_DATA_QUERY
+                {
+                layout = EDateLayout;
+                label = GFL_DATE;
+                control = DATE_EDITOR
+                    {
+                    minDate = DATE
+                        {
+                        year = GNFIELDQUERY_DATE_EDITOR_MIN_DATE;
+                        };
+                    maxDate = DATE
+                        {
+                        year = GNFIELDQUERY_DATE_EDITOR_MAX_DATE;
+                        };
+                    flags = GNFIELDQUERY_DATE_EDITOR_FLAGS;
+                    };
+                };
+            }
+        };
+    }
+
+//------------------------------------------------------------------------------
+// TIME INPUT
+//------------------------------------------------------------------------------
+RESOURCE DIALOG r_gnfieldquery_time_query
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control = AVKON_DATA_QUERY
+                {
+                layout = ETimeLayout;
+                label = GFL_TIME;
+                control = TIME_EDITOR
+                    {
+                    minTime = TIME
+                        {
+                        second = GNFIELDQUERY_TIME_EDITOR_MIN_SECOND;
+                        minute = GNFIELDQUERY_TIME_EDITOR_MIN_MINUTE;
+                        hour = GNFIELDQUERY_TIME_EDITOR_MIN_HOUR;
+                        };
+                    maxTime = TIME
+                        {
+                        second = GNFIELDQUERY_TIME_EDITOR_MAX_SECOND;
+                        minute = GNFIELDQUERY_TIME_EDITOR_MAX_MINUTE;
+                        hour = GNFIELDQUERY_TIME_EDITOR_MAX_HOUR;
+                        };
+                    flags = EEikTimeWithoutSecondsField;
+                               /// | EEikTimeForce24HourFormat;
+                    };
+                };
+            }
+        };
+    }
+//------------------------------------------------------------------------------
+// NUMBER INPUT
+//------------------------------------------------------------------------------
+RESOURCE DIALOG r_gnfieldquery_number_layout
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control= AVKON_DATA_QUERY
+                {
+                layout = ENumberLayout;
+                label = GFL_NUMBER;
+//                control = NUMBER_EDITOR
+                control = AVKON_INTEGER_EDWIN
+                    {
+                    min = GNFIELDQUERY_NUMBER_EDITOR_MIN;
+                    max = GNFIELDQUERY_NUMBER_EDITOR_MAX;
+                    };
+                };
+            }
+        };
+    }
+//------------------------------------------------------------------------------
+// LIST INPUT
+//------------------------------------------------------------------------------
+RESOURCE DIALOG r_gnfieldquery_list_singlesel
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtListQueryControl;
+            id = EListQueryControl;
+            control = AVKON_LIST_QUERY_CONTROL
+                {
+                listtype = EAknCtSinglePopupMenuListBox;
+                listbox = LISTBOX
+                    {
+                    flags = EAknListBoxMenuList;
+                    height = 3;
+                    width = 3;
+//                    array_id = r_gnfieldquery_list_single_pane_item;
+                    };
+                heading = GFL_SELECT_HEADER;
+                };
+            }
+        };
+    }
+
+    
+#endif
+

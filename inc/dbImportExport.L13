@@ -1,0 +1,21 @@
+/*------------------------------------------------------------------------------
+
+        Import Export English Localisation
+
+------------------------------------------------------------------------------*/
+
+#define __IMPORT_EXPORT_ENGLISH_LOCALISATION_INCLUDED___
+
+#define DVL_CHOOSE_MEMORY       "Memoria"
+#define DVL_SELECT_A_FILE       "Ficheiro"
+#define DVL_SELECT_SEPARATOR     "Separador"
+
+
+#define DVL_IMPEXP_ARRAY_SEPARATOR_01 "Virgula (,)"
+#define DVL_IMPEXP_ARRAY_SEPARATOR_02 "Ponto e Virgula (;)"
+#define DVL_IMPEXP_ARRAY_SEPARATOR_03 "Tab"
+#define DVL_IMPEXP_ARRAY_SEPARATOR_04 "Espaço"
+
+#define DVL_r_db_import_export_str_error "Erro!"
+#define DVL_r_db_import_export_str_invalid_format "Formato invalido, verifique se o header do ficheiro CSV está de acordo com os campos da tabela."
+

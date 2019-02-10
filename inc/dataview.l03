@@ -1,0 +1,52 @@
+/*------------------------------------------------------------------------------
+
+            DataView GERMAN Localization
+
+------------------------------------------------------------------------------*/
+#define __DATAVIEW_LOCALISATION_FILE_INCLUDED__
+#define DL_NEW              "Neu"
+#define DL_EDIT             "Bearbeiten"
+#define DL_DELETE           "Löschen"
+#define DL_HEADER           "Kopffeld"
+#define DL_SORT             "Sortieren"
+#define DL_PAGES            "Seiten"
+#define DL_FILTERS          "Filter"
+#define DL_LOOK_UP          "Suchen"
+#define DL_EXTERNAL_DATA    "Externe Daten"
+#define DL_IMPORT_CSV_FILE  "CSV Datei importieren"
+#define DL_EXPORT_CSV_FILE  "CSV Datei exportieren"
+#define DL_UNDO_LAST_IMPORT "Letzten Import verwerfen"
+#define DL_FIELD_SEPARATOR  "Feld-Trennzeichen"
+
+#define DL_FIELD_ARRAY_YES_NO_01 "Nein"
+#define DL_FIELD_ARRAY_YES_NO_02 "Ja"
+
+#define DL_DIAL             "Wählen"
+#define DL_SELCT_HEADER     "Kopffeld wählen"
+
+#define DL_ARRAY_OPERATION_01 "Gleich = "
+#define DL_ARRAY_OPERATION_02 "Kleiner <"
+#define DL_ARRAY_OPERATION_03 "Grösser >"
+#define DL_ARRAY_OPERATION_04 "Ungleich !="
+#define DL_ARRAY_OPERATION_05 "Beginnt mit..."
+#define DL_ARRAY_OPERATION_06 "Endet mit.."
+#define DL_ARRAY_OPERATION_07 "Enthält..."
+
+#define DL_ARRAY_DELETE_POSSIBILITIES_01 "Aktuellen Datensatz"
+#define DL_ARRAY_DELETE_POSSIBILITIES_02 "Alle Datensätze"
+
+#define DL__str_none        "(keines)"
+#define DL__str_header      "Kopffeld wählen"
+#define DL__str_sort        "Sortierfeld wählen"
+#define DL__str_pages       "Sichtbare Seiten wählen"
+#define DL__str_data_report             "Datenreport\nTabelle "
+#define DL__str_data_edition            "Daten bearbeiten\nTabelle "
+#define DL__str_select_operation        "Operation wählen"
+#define DL__str_select_filter_to_del    "Zu löschenden Filter wählen"
+#define DL__str_delete                  "Löschen :"
+#define DL__str_not_found               "Keine Einträge!"
+#define DL__str_error_updating_table    "Fehler bei der Aktualisierung der Tabelle!"
+
+
+
+

@@ -1,0 +1,31 @@
+/*
+* ==============================================================================
+*  Name        : Helloworldbasic_reg.rss
+*  Part of     : Helloworldbasic
+*  Interface   : 
+*  Description : 
+*  Version     : 
+*
+*  Copyright (c) 2005-2006 Nokia Corporation.
+*  This material, including documentation and any related 
+*  computer programs, is protected by copyright controlled by 
+*  Nokia Corporation.
+* ==============================================================================
+*/
+
+#include <appinfo.rh>
+#include <QuodDB.rsg>
+
+UID2 KUidAppRegistrationResourceFile
+UID3 0xA00011DF
+
+RESOURCE APP_REGISTRATION_INFO
+  {
+  app_file="QuodDB";
+  localisable_resource_file =  "\\resource\\apps\\QuodDB";
+  localisable_resource_id = R_LAI;
+
+  embeddability=KAppNotEmbeddable;
+  newfile=KAppDoesNotSupportNewFile;
+  }
+

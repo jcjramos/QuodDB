@@ -1,0 +1,21 @@
+/*------------------------------------------------------------------------------
+
+        Import Export English Localisation
+
+------------------------------------------------------------------------------*/
+
+#define __IMPORT_EXPORT_ENGLISH_LOCALISATION_INCLUDED___
+
+#define DVL_CHOOSE_MEMORY       "Choose Memory"
+#define DVL_SELECT_A_FILE       "Select a File"
+#define DVL_SELECT_SEPARATOR     "Select Separator"
+
+
+#define DVL_IMPEXP_ARRAY_SEPARATOR_01 "Comma (,)"
+#define DVL_IMPEXP_ARRAY_SEPARATOR_02 "SemiColon (;)"
+#define DVL_IMPEXP_ARRAY_SEPARATOR_03 "Tab"
+#define DVL_IMPEXP_ARRAY_SEPARATOR_04 "Space"
+
+#define DVL_r_db_import_export_str_error "Error!"
+#define DVL_r_db_import_export_str_invalid_format "Invalid format, please make sure that the CSV header matches with the table fields."
+

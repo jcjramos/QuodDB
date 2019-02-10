@@ -1,0 +1,54 @@
+/**
+* 
+* @brief Constants file for QuodDb application
+*
+* Copyright (c) EMCC Software Ltd 2003
+* @version 1.0
+*/
+
+#ifndef QuodDb_HRH
+#define QuodDb_HRH
+
+
+enum QuodDbViews
+{
+	EMainViewId = 100,
+    EDataDefinitionViewId = 200
+};
+
+
+enum QuodDbMenuOptions_e
+{
+	EMenuNew = 1000,
+    EMenuSelect,
+    EMenuDelete,
+    EMenuChangeDB,
+    EMenuChangeTable,
+    EMenuDataDefinitionMode,
+    EMenuDataMode,
+    EMenuReportMode,
+    EMenuExternal,
+    EMenuExternalImport,
+    EMenuExternalSeparator,
+    EMenuAbout
+};
+
+// Command ids
+enum
+	{
+	EQuodDbCmdPlayGame = 0x6000
+	};
+
+enum CQuodDbFieldFormDef_fields_e
+{
+    EQFieldFormDefName = 1,
+    EQFieldFormDefLen,
+    EQFieldFormDefType,
+    EQFieldFormDefHeading,
+    EQFieldFormDefListOptions,
+    EQFieldFormDefKey
+};
+
+#endif	// QuodDb_HRH
+
+// End of File

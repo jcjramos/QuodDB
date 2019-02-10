@@ -1,0 +1,16 @@
+/**
+* 
+* @brief Build information file for ListDlg application
+*
+* Copyright (c) EMCC Software Ltd 2003
+* @version 1.0
+*/
+
+
+PRJ_MMPFILES
+gnumakefile icons_scalable_dc.mk
+QuodDb.mmp
+
+
+
+// End of File

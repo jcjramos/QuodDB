@@ -1,0 +1,93 @@
+/**
+* 
+* @brief Resource file containing Spanish strings for QuodDb application
+*
+* Copyright (c) EMCC Software Ltd 2003
+* @version 1.0
+*/
+
+//  APPLICATION INFORMATION
+#define ELanguage	ELangSpanish	// Caption language
+
+//  LOCALISATION STRINGS
+
+#define SAVED_GAME1_TEXT "0\tA Level"
+#define SAVED_GAME2_TEXT "1\tAA Level"
+#define SAVED_GAME3_TEXT "0\tB Level"
+
+#define ICON_FILE_NAME "\\system\\apps\\QuodDb\\QuodDb.mbm"
+
+// caption strings for app
+#define qtn_app_caption_string "QuodDlg"
+#define qtn_app_short_caption_string "QuodDb"
+
+
+#define EXIT_TEXT           "Salida"
+#define L_DATA_REPORT       "Informe"
+#define L_DATA_EDITION      "Edición de datos"
+#define L_DATA_DEFINITION   "Definición de datos"
+#define L_SWITCH_TABLE      "Tabla"
+#define L_ABOUT             "Sobre"
+#define L_NEW               "Nuevo"
+#define L_EDIT              "Editar"
+#define L_DELETE            "Borrar"
+#define L_DATABASES         "Bases de datos"
+#define L_TABLES            "Tablas"
+#define L_EXTERNAL_DATA     "Datos externos"
+#define L_IMPORT_CSV_STRUCTURE   "Importar estructura de CSV"
+#define L_FIELD_SEPARATOR        "Separador"
+#define L_SELECT_HEADER         "Encabezamiento"
+#define L_NAME                  "Nombre"
+#define L_LENGHT                "Tamaño"
+#define L_TYPE                  "Tipo"
+#define L_KEY                   "Clef"
+#define L_OPTIONS               "Opciones"
+
+#define L_TYPE_TEXTARRAY_01    "Número (Int)"
+#define L_TYPE_TEXTARRAY_02    "Texto"
+#define L_TYPE_TEXTARRAY_03    "Fecha"
+#define L_TYPE_TEXTARRAY_04    "Hora"
+#define L_TYPE_TEXTARRAY_05    "Núm. de teléfono"
+#define L_TYPE_TEXTARRAY_06    "Numero (Real)"
+#define L_TYPE_TEXTARRAY_07    "Lista"
+#define L_TYPE_TEXTARRAY_08    "Sí/No"
+#define L_TYPE_TEXTARRAY_09    "Num. grande (Int)"
+
+#define L_DEF_FIELD_KEY_ARRAY_01 "No"
+#define L_DEF_FIELD_KEY_ARRAY_02 "Sí"
+#define L_DEF_FIELD_KEY_ARRAY_03 "Único"
+
+#define L_DEF_ARRAY_YES_NO_01 "No"
+#define L_DEF_ARRAY_YES_NO_02 "Sí"
+
+#define L_COMMA_NONE_COMMA      "(ninguno)"
+#define L_NEW_OPTION_ITEM       "Nueva opcion"
+#define L_DELETE_OPTION_ITEM    "Borrar opcion"
+
+#define LR_NAME "Name"
+#define LR_CONFIRM_DELETE_DB        "Realmente desea suprimir la base de datos "
+#define LR_CONFIRM_DELETE_TABLE     "Realmente desea suprimir la tabla "
+#define LR_CONFIRM_DELETE_COLUMN    "Realmente desea suprimir la columna "
+#define LR_NEW_DATABASE_NAME        "Nombre de nueva base de datos "
+#define LR_NEW_TABLE_NAME           "Nombre de nueva tabla "
+#define LR_NEW_AVA_OPTION           "Nueva opcion"
+#define LR_DELETE_AVA_OPTION            "Borra la opcion "
+#define LR_MUST_DEFINE_TABLE_COLUMNS    "No puede editar datos, defina por favor algunas columnas de la tabla primero."
+#define LR_CURRENT_DATABASE             "Base de datos : "
+#define LR_CURRENT_TABLE                "Tabla :  "
+#define LR_CURRENT_SELECTION            "Selección"
+#define LR_MAIN_SCREEN_INFO1            "QuodDB"
+#define LR_MAIN_SCREEN_INFO2            "www.quodsoftware.com"
+#define LR_STE_ERROR_INVALID_NAME       "Nombre inválido, no utilize por favor espacios o no-alfa caracters."
+#define LR_STR_TABLES_LIST              "Lista de Tablas :  "
+#define LR_STR_ERROR_NO_OPTIONS_IN_THE_LIST     "Tipo = Lista pero ningunas opciones de la lista !"
+#define LR_STR_ABOUT_TITLE              "QuodDB 1.2"
+#define LR_STR_ABOUT_TEXT               "Quod Database es un producto Quod Software.\nwww.quodsoftware.com\nCopyright 2004\nAll rights reserved.\nQuodSoftware is a brand owned by J.C.R."
+#define LR_TITLE_DATABASE_LIST          "Lista de bases de datos"
+#define LR_TITLE_TABLES_LIST            "Lista de Tablas\nBD: "
+#define LR_TITLE_COLUMNS_LIST           "Lista de Colunas\nTable: "
+#define LR_TITLE_MOBILE_DATABASE        " Quod Mobile\nBase de Datos"
+
+
+
+// End of File

@@ -1,0 +1,50 @@
+/*------------------------------------------------------------------------------
+
+            DataView Spanhish Localization
+
+------------------------------------------------------------------------------*/
+#define __DATAVIEW_LOCALISATION_FILE_INCLUDED__
+#define DL_NEW              "Nuevo"
+#define DL_EDIT             "Editar"
+#define DL_DELETE           "Borrar"
+#define DL_HEADER           "Encabezamiento"
+#define DL_SORT             "Cambiar la orden"
+#define DL_PAGES            "Paginas"
+#define DL_FILTERS          "Filtros"
+#define DL_LOOK_UP          "Búsqueda"
+#define DL_EXTERNAL_DATA    "Datos externos"
+#define DL_IMPORT_CSV_FILE  "Importar CSV"
+#define DL_EXPORT_CSV_FILE  "Exportar CSV"
+#define DL_UNDO_LAST_IMPORT "Borrar ultima importación"
+#define DL_FIELD_SEPARATOR  "Separador"
+
+#define DL_FIELD_ARRAY_YES_NO_01 "No"
+#define DL_FIELD_ARRAY_YES_NO_02 "Sí"
+
+#define DL_DIAL             "Teléfonar"
+#define DL_SELCT_HEADER     "Encabezamiento"
+
+#define DL_ARRAY_OPERATION_01 "Igual = "
+#define DL_ARRAY_OPERATION_02 "Menor que <"
+#define DL_ARRAY_OPERATION_03 "Maior que >"
+#define DL_ARRAY_OPERATION_04 "Diferente !="
+#define DL_ARRAY_OPERATION_05 "Comienza por..."
+#define DL_ARRAY_OPERATION_06 "Termina por..."
+#define DL_ARRAY_OPERATION_07 "Contiene..."
+
+#define DL_ARRAY_DELETE_POSSIBILITIES_01 "Línea actual"
+#define DL_ARRAY_DELETE_POSSIBILITIES_02 "Toda la tabla"
+
+#define DL__str_none        "(ningunos)"
+#define DL__str_header      "Encabezamiento"
+#define DL__str_sort        "Ordenar por"
+#define DL__str_pages       "Paginas visibles"
+#define DL__str_data_report             "Informe\nTabla "
+#define DL__str_data_edition            "Edición de datos\nTabla "
+#define DL__str_select_operation        "Operacción"
+#define DL__str_select_filter_to_del    "Seleccione el filtro a suprimir"
+#define DL__str_delete                  "Borrar :"
+#define DL__str_not_found               "¡No encontrado!"
+#define DL__str_error_updating_table    "Error a escrivir en la tabla !"
+
+

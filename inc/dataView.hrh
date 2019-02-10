@@ -1,0 +1,32 @@
+/*------------------------------------------------------------------------------
+
+            Generic Symbian Data View
+
+           For DbMaster generated files
+
+    JCR 3.2004
+------------------------------------------------------------------------------*/
+#ifndef ___DATA_VIEW_HRH___
+#define ___DATA_VIEW_HRH___
+
+enum DataViewMenuOptions_e
+{
+	EDataViewMenuNew = 850,
+    EDataViewMenuEdit,
+    EDataViewMenuDelete,
+    EDataViewMenuHeader,
+    EDataViewMenuSort,
+    EDataViewMenuPages,
+    EDataViewMenuFilters,
+    EDataViewMenuFiltersAdd,
+    EDataViewMenuFiltersRemove,
+    EDataViewMenuExternal,
+    EDataViewMenuExternalImport,
+    EDataViewMenuExternalExport,
+    EDataViewMenuExternalSeparator,
+    EDataViewMenuExternalUndoImport,
+    EDataViewMenuELookup,
+    EDataViewMenuFormMenuDial
+};
+
+#endif

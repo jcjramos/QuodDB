@@ -1,0 +1,17 @@
+
+IMPORTANT : Read the folowing agreement carefully before instaling this software. By Installing this software you indicate your acceptance of the following agreemenent.
+
+LICENSE AGREEMENT
+
+QuodDB Software is owned by QuodSoftware/J.C.R. and is protected by the European Union copyright law and international treaties. QuodSoftware/J.C.R. grants you the right to use one copy of this Software on a single device. You may however make copies of this software for backup purposes. 
+
+LIMITED WARRANTY
+
+This application was subjected to extensive testing to guarantee that it will perform correctly according to the application requirements and the accompanying written manual.  QuodSoftware/J.C.R. warrants this application for a period of 1 year after the purchase, your sole and exclusive remedy and QuodSoftware/J.C.R. exclusive liability shall be, at QuodSoftware/J.C.R. option - either replacement of the software or a refund of the purchase price.
+
+In no event shall QuodSoftware/J.C.R. be liable for any consequential, special, incidental, direct or indirect damages of any kind arising out of the use of this software or any defect in this software.
+
+The laws of the Portuguese Republic govern this agreement.
+
+
+

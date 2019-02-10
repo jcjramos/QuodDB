@@ -1,0 +1,594 @@
+/**
+*
+* @brief Resource file for ListDlg application
+*
+* Copyright (c) EMCC Software Ltd 2003
+* @version 1.0
+*/
+
+//  RESOURCE IDENTIFIER
+NAME    QUDB // 4 letter ID
+
+//  INCLUDES
+
+
+#include <avkon.rsg>
+#include <avkon.rh>
+#include <avkon.mbg>
+#include <eikon.rh>
+
+//#include <aknexquery.mbg>
+
+#include "QuodDb.hrh"
+#include "QuodDb.loc"
+
+
+#define AKNEXLIST_HOTKEY_EXIT_KEY 'e'
+#define AKNEXQUERY_EDWIN_WIDTH 5
+#define AKNEXQUERY_EDWIN_LINES 5
+#define AKNEXQUERY_EDWIN_MAXLENGTH 128
+#define AKNEXQUERY_EDWIN_SHORT_MAXLENGTH 64
+
+//------------------------------------------------------------------------------
+// Language dependent text ...
+//------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------
+// Language dependent text ...
+//------------------------------------------------------------------------------
+
+//  RESOURCE DEFINITIONS
+
+RESOURCE RSS_SIGNATURE { }
+
+RESOURCE TBUF { buf="QuodDb"; }
+
+RESOURCE EIK_APP_INFO
+	{
+	menubar=r_listdlg_menu_bar;
+//	cba=R_AVKON_SOFTKEYS_OPTIONS_BACK;
+//    cba=R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+	}
+
+// To be handled as part of the same resource ...
+#include "dataView.rh"
+#include "gnFieldQuery.rh"
+#include "dbImportExport.rh"
+//----------------------------------------------------
+//
+//    r_listdlg_menu_bar
+//    options menu for the application
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_listdlg_menu_bar
+	{
+	titles=
+		{
+		MENU_TITLE
+			{
+			txt = ""; // the text is not used in Series 60
+			menu_pane = r_listdlg_menu_pane;
+			}
+		};
+	}
+
+
+//----------------------------------------------------
+//
+//    r_listdlg_menu_pane
+//    options menu pane for the application
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_listdlg_menu_pane
+	{
+	items =
+		{
+		MENU_ITEM
+			{
+			command = EAknCmdExit;
+			txt = EXIT_TEXT;
+			}
+		};
+	}
+
+//-----------------------------------------------------------------------------
+//
+//    Main View
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_main_view
+    {
+    menubar = r_main_view_menubar;
+//  hotkeys = r_aknexlist_hotkeys;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+    }
+
+RESOURCE MENU_BAR r_main_view_menubar
+    {
+    titles =
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_main_view_menu;
+            }
+        };
+    }
+
+RESOURCE MENU_PANE r_main_view_menu
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EMenuReportMode;
+            txt = L_DATA_REPORT;
+            },
+
+        MENU_ITEM
+            {
+            command = EMenuDataMode;
+            txt = L_DATA_EDITION;
+            },
+        MENU_ITEM
+            {
+            command = EMenuDataDefinitionMode;
+            txt = L_DATA_DEFINITION;
+            flags = EEikMenuItemSeparatorAfter;
+            },
+        MENU_ITEM
+            {
+            command = EMenuChangeTable;
+            txt = L_SWITCH_TABLE;
+            },
+        MENU_ITEM
+            {
+            command = EMenuAbout;
+            txt = L_ABOUT;
+            flags = EEikMenuItemSeparatorAfter;
+            },
+
+        MENU_ITEM
+            {
+            command = EAknCmdExit; // EEikCmdExit;
+            txt = EXIT_TEXT;
+            }
+
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    Data Definition View
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_data_definition_view
+    {
+    menubar = r_data_definition_view_menubar;
+//  hotkeys = r_aknexlist_hotkeys;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    }
+
+RESOURCE MENU_BAR r_data_definition_view_menubar
+    {
+    titles =
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_data_definition_view_menu;
+            }
+        };
+    }
+
+RESOURCE MENU_PANE r_data_definition_view_menu
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EMenuNew;
+            txt = L_NEW;
+            },
+        MENU_ITEM
+            {
+            command = EMenuSelect;
+            txt = L_EDIT;
+            },
+        MENU_ITEM
+            {
+            command = EMenuDelete;
+            txt = L_DELETE;
+            flags = EEikMenuItemSeparatorAfter;
+            },
+        MENU_ITEM
+            {
+            command = EMenuChangeDB;
+            txt = L_DATABASES;
+            },
+        MENU_ITEM
+            {
+            command = EMenuChangeTable;
+            txt = L_TABLES;
+            flags = EEikMenuItemSeparatorAfter;
+            },
+        MENU_ITEM
+            {
+            command = EMenuExternal;
+            txt = L_EXTERNAL_DATA;
+            cascade = r_data_definition_external;
+            }
+        };
+    }
+RESOURCE MENU_PANE r_data_definition_external
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EMenuExternalImport;
+            txt = L_IMPORT_CSV_STRUCTURE;
+            },
+        MENU_ITEM
+            {
+            command = EMenuExternalSeparator;
+            txt = L_FIELD_SEPARATOR;
+            }
+
+        };
+    }
+
+//-----------------------------------------------------------------------------
+//
+//    List DLG -> Database Selection
+//
+//-----------------------------------------------------------------------------
+//
+/*
+RESOURCE DIALOG r_listdlg_databases
+	{
+	flags = EAknDialogSelectionList;
+	buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+	items =
+		{
+
+		DLG_LINE
+			{
+            type = EAknCtSingleHeadingListBox;
+			id = ESelectionListControl;
+			control = LISTBOX
+				{
+				flags = EAknListBoxSelectionList;
+//				array_id = r_listdlg_list_array;
+				};
+			}
+
+		};
+	}
+*/
+//-----------------------------------------------------------------------------
+// Query Dialogs
+//-----------------------------------------------------------------------------
+
+RESOURCE DIALOG r_quodb_data_query_dialog_db
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control = AVKON_DATA_QUERY
+                {
+                layout = EDataLayout;
+                label = "";
+                control = EDWIN
+                    {
+                    flags = EEikEdwinNoHorizScrolling | EEikEdwinResizable;
+                    width = AKNEXQUERY_EDWIN_WIDTH;
+                    lines = AKNEXQUERY_EDWIN_LINES;
+                    maxlength = AKNEXQUERY_EDWIN_SHORT_MAXLENGTH;
+                    };
+                };
+            }
+        };
+    }
+
+//
+RESOURCE DIALOG r_quodb_confirmation_yes_no_dlg
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_YES_NO;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control = AVKON_CONFIRMATION_QUERY
+                {
+                layout = EConfirmationQueryLayout;
+//                label = "Just a test"; We give the label in runtime ...
+                };
+            }
+        };
+    }
+
+RESOURCE DIALOG r_quodb_view_list_query
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtListQueryControl;
+            id = EListQueryControl;
+            control = AVKON_LIST_QUERY_CONTROL
+                {
+                listtype = EAknCtSinglePopupMenuListBox;
+                listbox = LISTBOX
+                    {
+                    flags = EAknListBoxMenuList;
+                    height = 3;
+                    width = 3;
+//                    array_id = r_aknexquery_list_single_pane_item;
+                    };
+                heading = L_SELECT_HEADER; //"Select Header";
+                };
+            }
+        };
+    }
+
+// ---------------------------------------------------------
+//
+//	QuodDbFieldFormDef - Form defenition for a new Field
+//
+// ---------------------------------------------------------
+//
+RESOURCE DIALOG r_field_form_def_dialog
+	{
+	flags = EEikDialogFlagNoDrag |
+			EEikDialogFlagFillAppClientRect |
+			EEikDialogFlagNoTitleBar |
+			EEikDialogFlagWait |
+			EEikDialogFlagCbaButtons;
+	buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+	form = r_field_form_def;
+	}
+
+
+// ---------------------------------------------------------
+//
+//	The Field form
+//
+// ---------------------------------------------------------
+//
+RESOURCE FORM r_field_form_def
+	{
+	flags = EEikFormEditModeOnly;
+	items =
+		{
+		DLG_LINE
+			{
+			type=EEikCtEdwin;
+			prompt=L_NAME; //"Name";
+			id=EQFieldFormDefName;
+			control=EDWIN
+				{
+				width=64;
+				maxlength=64;
+				};
+			},
+		DLG_LINE
+			{
+			type=EEikCtNumberEditor;
+			prompt=L_LENGHT; //"Lenght";
+			id=EQFieldFormDefLen;
+			control=NUMBER_EDITOR
+				{
+				min=0;
+				max=128;
+				};
+			},
+        DLG_LINE
+			{
+			type = EAknCtPopupFieldText;
+			prompt = L_TYPE; //"Type";
+			id = EQFieldFormDefType;
+			itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+			control = POPUP_FIELD_TEXT
+                {
+				popupfield = POPUP_FIELD
+					{
+					width = 64;
+					};
+				textarray = r_field_form_def_field_type_textarray;
+				active = 0;
+                };
+		   },
+        DLG_LINE
+			{
+			type = EAknCtPopupFieldText;
+			prompt = L_KEY; //"Key";
+			id = EQFieldFormDefKey;
+			itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+			control = POPUP_FIELD_TEXT
+                {
+				popupfield = POPUP_FIELD
+					{
+					width = 64;
+					};
+				textarray = r_field_form_def_field_key;
+				active = 0;
+                };
+		   },
+        DLG_LINE
+           {
+           type = EAknCtPopupField;
+           prompt = L_OPTIONS; //"Options";
+           id = EQFieldFormDefListOptions;
+           itemflags = EEikDlgItemTakesEnterKey | EEikDlgItemOfferAllHotKeys;
+           control = POPUP_FIELD
+                {
+                flags = EAknPopupFieldNoGraphic;
+                width = 64;
+                };
+           tooltip = "";
+           }
+
+        };
+	}
+
+
+// TEXT FOR THE TYPE POPUP...
+RESOURCE ARRAY r_field_form_def_field_type_textarray
+{
+items =	{
+    LBUF	{ txt = L_TYPE_TEXTARRAY_01; },
+    LBUF	{ txt = L_TYPE_TEXTARRAY_02; },
+    LBUF	{ txt = L_TYPE_TEXTARRAY_03; },
+    LBUF	{ txt = L_TYPE_TEXTARRAY_04; },
+    LBUF	{ txt = L_TYPE_TEXTARRAY_05; },
+    LBUF	{ txt = L_TYPE_TEXTARRAY_06; },
+    LBUF	{ txt = L_TYPE_TEXTARRAY_07; },
+    LBUF	{ txt = L_TYPE_TEXTARRAY_08; },
+    LBUF	{ txt = L_TYPE_TEXTARRAY_09; }
+		};
+}
+
+RESOURCE ARRAY r_field_form_def_field_key
+{
+    items =	{
+    LBUF	{ txt = L_DEF_FIELD_KEY_ARRAY_01; },
+    LBUF	{ txt = L_DEF_FIELD_KEY_ARRAY_02; },
+    LBUF	{ txt = L_DEF_FIELD_KEY_ARRAY_03; }
+        };
+}
+
+RESOURCE ARRAY r_field_form_array_yes_no
+{
+    items =	{
+    LBUF	{ txt = L_DEF_ARRAY_YES_NO_01; },
+    LBUF	{ txt = L_DEF_ARRAY_YES_NO_02; }
+        };
+}
+
+RESOURCE ARRAY r_field_form_def_field_listoptions_textarray
+	{
+items =	{
+    LBUF	{ txt = L_COMMA_NONE_COMMA; }
+		};
+	}
+//-----------------------------------------------------------------------------
+//    The Field form   MenuBar
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_BAR r_field_form_def_menu_bar
+    {
+    titles =
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_field_form_def_menu;
+            }
+        };
+    }
+
+RESOURCE MENU_PANE r_field_form_def_menu
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EMenuNew;
+            txt = L_NEW_OPTION_ITEM;
+            },
+        MENU_ITEM
+            {
+            command = EMenuDelete;
+            txt = L_DELETE_OPTION_ITEM;
+            }
+        };
+    }
+
+
+// ---------------------------------------------------------
+//
+//    Strings used by the application
+//
+// ---------------------------------------------------------
+//
+RESOURCE TBUF r_icon_file_name { buf = ICON_FILE_NAME;}
+RESOURCE TBUF r_a_title { buf = "Just a title";}
+RESOURCE TBUF r_quod_db_text {buf = "QuodDB"; }
+
+RESOURCE TBUF r_name { buf = LR_NAME; }
+RESOURCE TBUF r_confirm_delete_db { buf = LR_CONFIRM_DELETE_DB; }
+RESOURCE TBUF r_confirm_delete_table { buf = LR_CONFIRM_DELETE_TABLE; }
+RESOURCE TBUF r_confirm_delete_column { buf = LR_CONFIRM_DELETE_COLUMN; }
+RESOURCE TBUF r_new_database_name { buf = LR_NEW_DATABASE_NAME; }
+RESOURCE TBUF r_new_table_name { buf = LR_NEW_TABLE_NAME; }
+RESOURCE TBUF r_new_ava_option { buf = LR_NEW_AVA_OPTION; }
+RESOURCE TBUF r_delete_ava_option { buf = LR_DELETE_AVA_OPTION; }
+RESOURCE TBUF r_current_database { buf = LR_CURRENT_DATABASE; }
+RESOURCE TBUF r_current_table { buf = LR_CURRENT_TABLE; }
+RESOURCE TBUF r_current_selection { buf = LR_CURRENT_SELECTION; }
+RESOURCE TBUF r_main_screen_info1 { buf = LR_MAIN_SCREEN_INFO1; }
+RESOURCE TBUF r_main_screen_info2 { buf = LR_MAIN_SCREEN_INFO2; }
+RESOURCE TBUF r_str_error_invalid_name { buf = LR_STR_ERROR_INVALID_NAME; }
+RESOURCE TBUF r_str_tables_list { buf = LR_STR_TABLES_LIST; }
+RESOURCE TBUF r_str_error_no_options_in_the_list { buf = LR_STR_ERROR_NO_OPTIONS_IN_THE_LIST; }
+RESOURCE TBUF r_str_about_title { buf = LR_STR_ABOUT_TITLE; }
+RESOURCE TBUF r_str_about_text { buf = LR_STR_ABOUT_TEXT; }
+RESOURCE TBUF r_str_must_define_table_columns { buf = LR_MUST_DEFINE_TABLE_COLUMNS; }
+
+RESOURCE TBUF r_title_database_list { buf = LR_TITLE_DATABASE_LIST; }
+RESOURCE TBUF r_title_tables_list { buf = LR_TITLE_TABLES_LIST; }
+RESOURCE TBUF r_title_columns_list { buf = LR_TITLE_COLUMNS_LIST; }
+RESOURCE TBUF r_title_mobile_database {buf = LR_TITLE_MOBILE_DATABASE; }
+
+
+// End of File
+
+RESOURCE EDWIN r_data_view_field_edit_form_float_text_number
+{
+//	width = 64;
+	lines = 1;
+	maxlength = 64;
+//	flags = EEikEdwinWidthInPixels;
+	avkon_flags = EAknEditorFlagNoT9;
+	default_case = EAknEditorLowerCase;
+	allowed_case_modes = EAknEditorUpperCase | EAknEditorLowerCase;
+	numeric_keymap = EAknEditorCalculatorNumberModeKeymap;
+
+//EAknEditorToFieldNumberModeKeymap; //EAknEditorPlainNumberModeKeymap; //EAknEditorStandardNumberModeKeymap; //EAknEditorFixedDiallingNumberModeKeymap; //EAknEditorConverterNumberModeKeymap; //EAknEditorCalculatorNumberModeKeymap;
+
+	allowed_input_modes = EAknEditorTextInputMode | EAknEditorNumericInputMode;
+	default_input_mode = EAknEditorNumericInputMode;
+	special_character_table = R_AVKON_SPECIAL_CHARACTER_TABLE_DIALOG;
+}
+
+
+RESOURCE DIALOG r_progress_note
+{
+flags = EAknProgressNoteFlags;
+buttons = R_AVKON_SOFTKEYS_CANCEL;
+items =
+{
+DLG_LINE
+{
+	type = EAknCtNote;
+	id = 1;
+	control = AVKON_NOTE
+	{
+		layout = EProgressLayout;
+		singular_label ="Wait...";
+		};
+	}
+	};
+}

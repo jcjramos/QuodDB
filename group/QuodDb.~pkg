@@ -1,0 +1,50 @@
+
+&EN,FR,GE,SP,PO
+;&GE
+
+; targetapp (QuodDb)
+; target directory \Symbian\Series60_1_2_B\epoc32\release\armi\urel\
+; Header
+
+#{"QuodDb","QuodDb","QuodDb","QuodDb","QuodDb"},(0x102010FB),1,8,0,TYPE=SISAPP
+;#{"QuodDb"},(0x102010FB),1,7,0,TYPE=SISAPP
+
+;Supports Series 60 v 0.9
+;This line indicates that this installation is for the Series 60 platform v0.9
+;This line must appear _exactly_ as shown below in the sis file
+;If this line is missing or incorrect, the sis file will not be able
+;to be installed on Series 60 v0.9 platforms
+(0x101F8202), 0, 0, 0, {"Series60ProductID","Series60ProductID","Series60ProductID","Series60ProductID","Series60ProductID"}
+;(0x101F6F87), 0, 0, 0, {"Series60ProductID"} - CHANGED in 24.07.2004, new Symbian Phones are imcompatible with 0x101F8202, code for the N7650
+
+
+; Digitally sign this .sis file
+*"C:\prj\Quod\Quod.key","C:\prj\Quod\Quod.cer"
+
+"license.txt"-"",FT,TA
+
+; mmpfile: QuodDb.mmp
+; targets
+; target: QuodDb.app
+"\Symbian\Series60_1_2_B\epoc32\release\armi\urel\QuodDb.app"-"!:\system\apps\QuodDb\QuodDb.app"
+; resources
+; resource: ..\group\QuodDb.rss
+; resource: ..\group\QuodDb_caption.rss
+; bitmaps
+; bitmaps: QuodDb.mbm
+"\Symbian\Series60_1_2_B\epoc32\release\armi\urel\QuodDb.mbm"-"!:\system\apps\QuodDb\QuodDb.mbm"
+; languages
+; language: 01
+"\Symbian\Series60_1_2_B\epoc32\release\armi\urel\QuodDb.R01"-"!:\system\apps\QuodDb\QuodDb.R01"
+; language: 02
+"\Symbian\Series60_1_2_B\epoc32\release\armi\urel\QuodDb.R02"-"!:\system\apps\QuodDb\QuodDb.R02"
+; language: 03
+"\Symbian\Series60_1_2_B\epoc32\release\armi\urel\QuodDb.R03"-"!:\system\apps\QuodDb\QuodDb.R03"
+; language: 04
+"\Symbian\Series60_1_2_B\epoc32\release\armi\urel\QuodDb.R04"-"!:\system\apps\QuodDb\QuodDb.R04"
+; language: 13
+"\Symbian\Series60_1_2_B\epoc32\release\armi\urel\QuodDb.R13"-"!:\system\apps\QuodDb\QuodDb.R13"
+; aif files
+"\Symbian\Series60_1_2_B\epoc32\release\armi\urel\QuodDb.aif"-"!:\system\apps\QuodDb\QuodDb.aif"
+
+; end of pkg file

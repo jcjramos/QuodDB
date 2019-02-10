@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<svg baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" xmlns:xlink="http://www.w3.org/1999/xlink">
+<line y1="2" y2="38" stroke-linecap="round" stroke="rgb(0,0,255)" stroke-width="1" transform="matrix(1.83513,0,0,1.30728,-14.676,-2.13038)" x1="16.5" x2="16.5"/>
+<line x1="30" y1="2" x2="30" y2="42" stroke-linecap="round" stroke="rgb(0,0,255)" stroke-width="1" transform="matrix(1.8963,0,0,1.17695,-24.2197,-1.87416)"/>
+<line x1="2" x2="42" stroke-linecap="round" stroke="rgb(0,0,255)" stroke-width="1" transform="matrix(1.17695,0,0,1.8963,-1.87416,-11.8246)" y1="14.5" y2="14.5"/>
+<line x1="2" y1="30" x2="42" y2="30" stroke-linecap="round" stroke="rgb(0,0,255)" stroke-width="1" transform="matrix(1.17721,0,0,1.8963,-1.87324,-24.2198)"/>
+<circle cy="7" r="5" fill="none" stroke="rgb(255,0,0)" stroke-width="3" transform="matrix(1.09091,0,0,1.09091,16.875,16.3839)" cx="22.3"/>
+<circle cx="23" cy="7" r="5" fill="none" stroke="rgb(255,0,0)" stroke-width="3" transform="matrix(1.09091,0,0,1.09091,-1.0707,16.3839)"/>
+<circle r="5" fill="none" stroke="rgb(255,0,0)" stroke-width="3" transform="matrix(1.09091,0,0,1.09091,-19.0161,-1.56178)" cx="23.8" cy="7.8"/>
+<line stroke-linecap="round" stroke="rgb(0,0,0)" stroke-width="3" transform="matrix(0.917983,0,0,0.917983,8.93627,-1.31879)" x1="29.2" x2="41.2" y1="2.8" y2="14.8"/>
+<line stroke="rgb(0,0,0)" stroke-linecap="round" stroke-width="3" transform="matrix(0.917765,0,0,0.91205,3.41937,0.5307)" x1="35.2" y1="12.8" x2="47.2" y2="0.8"/>
+<line y1="2" y2="14" stroke-linecap="round" stroke="rgb(0,0,0)" stroke-width="3" transform="matrix(0.917983,0,0,0.917983,-27.0637,16.6812)" x1="30.8" x2="42.8"/>
+<line y1="12" y2="0" stroke="rgb(0,0,0)" stroke-linecap="round" stroke-width="3" transform="matrix(0.917765,0,0,0.91205,-32.5806,18.5307)" x1="36.8" x2="48.8"/>
+<line stroke="rgb(0,0,0)" stroke-linecap="round" stroke-width="3" x1="36.8" x2="48.8" transform="matrix(0.917765,0,0,0.91205,-15.2872,34.4707)" y1="12.8" y2="0.8"/>
+<line y1="2" stroke-linecap="round" stroke="rgb(0,0,0)" stroke-width="3" x1="30.8" x2="42.8" transform="matrix(0.917983,0,0,0.917983,-9.77032,32.6212)" y2="14.8"/>
+</svg>

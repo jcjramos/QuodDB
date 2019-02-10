@@ -1,0 +1,66 @@
+TARGET  QuodDb.app
+TARGETTYPE  app
+UID  0x100039CE 0x102010FB
+TARGETPATH \system\apps\QuodDb
+
+// DEFINE FOR DEMO
+//MACRO __DEMONSTRATION_VERSION__
+//MACRO __NO_COMMON_DIALOGS__
+// Because common dialogs don't work on a 7650 !!!!
+
+SOURCEPATH ..\group
+RESOURCE QuodDb.rss
+RESOURCE QuodDb_caption.rss
+LANG 01 02 03 04 13
+
+SOURCEPATH ..\src
+SOURCE  QuodDbApplication.cpp
+SOURCE  QuodDbAppUi.cpp
+SOURCE  QuodDbDocument.cpp
+SOURCE  QuodDbView.cpp
+SOURCE  QuodDbViewMain.cpp
+SOURCE  QuodDbMaster.cpp
+SOURCE  QuodDbMain.cpp
+SOURCE  QuodDbFieldFormDef.cpp
+SOURCE  dbMaster.cpp
+SOURCE  dbDataItem.cpp
+SOURCE  genericCfg.cpp
+SOURCE  listBoxContainer.cpp
+SOURCE  dataView.cpp
+SOURCE  dataViewForm.cpp
+SOURCE  gnFieldQuery.cpp
+SOURCE  csvReader.cpp
+SOURCE  dbImportExport.cpp
+SOURCE  dbManipulator.cpp
+SOURCE  instalationDateChecker.cpp
+
+USERINCLUDE . ..\inc 
+
+SYSTEMINCLUDE \epoc32\include
+
+LIBRARY euser.lib apparc.lib cone.lib eikcore.lib
+LIBRARY eikcoctl.lib avkon.lib
+LIBRARY agnmodel.lib bafl.lib eikctl.lib  estor.lib
+LIBRARY efsrv.lib bitgdi.lib
+LIBRARY edbms.lib
+// Cause of dialogs & forms
+LIBRARY eikdlg.lib
+LIBRARY COMMONDIALOGS.LIB
+// Telephone stuff
+LIBRARY etel.lib
+
+
+// Creates Mbm file.
+START BITMAP    QuodDb.mbm
+HEADER
+TARGETPATH      \system\apps\QuodDb
+SOURCEPATH      ..\bitmaps
+SOURCE          C12 1Player.bmp
+SOURCE          C12 2Player.bmp
+SOURCE          C12 1Player_mask.bmp
+SOURCE          C12 2Player_mask.bmp
+END
+
+AIF QuodDb.aif ..\aif QuodDbAif.rss c12 context_pane_icon.bmp context_pane_icon_mask.bmp list_icon.bmp list_icon_mask.bmp
+
+// End of File

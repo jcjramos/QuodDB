@@ -1,0 +1,547 @@
+/*
+        DataView related Resouces ... used by the dataView related classes
+        not a full RSS file please include it in you application RSS.
+
+        JCR 3.2004
+*/
+#ifndef ___DATAVIEW_RSS____
+#define ___DATAVIEW_RSS____
+
+#include "dataview.hrh"
+
+#ifndef __DATAVIEW_LOCALISATION_FILE_INCLUDED__
+#error PLEASE INCLUDE DATAVIEW.Lxx in you .LOC File !!!!
+#endif
+
+//-----------------------------------------------------------------------------
+//
+//    DataView definition
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE AVKON_VIEW R_DATA_VIEW_MASTER_VIEW
+    {
+    menubar = r_data_view_menu_bar;
+    hotkeys = r_data_view_hotkeys;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    }
+
+
+//-----------------------------------------------------------------------------
+//    hotkeys
+//-----------------------------------------------------------------------------
+//
+RESOURCE HOTKEYS r_data_view_hotkeys
+    {
+    control =
+        {
+        HOTKEY
+            {
+            command = EAknCmdExit;// EEikCmdExit;
+            key = AKNEXLIST_HOTKEY_EXIT_KEY;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+// dataView Menu Bar
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_BAR r_data_view_menu_bar
+    {
+    titles =
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_data_view_main_menu;
+            }
+        };
+    }
+
+//-----------------------------------------------------------------------------
+// Data View Menu
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_PANE r_data_view_main_menu
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EDataViewMenuNew;
+            txt = DL_NEW; //"New";
+            },
+
+        MENU_ITEM
+            {
+            command = EDataViewMenuEdit;
+            txt = DL_EDIT; //"Edit";
+            },
+
+        MENU_ITEM
+            {
+            command = EDataViewMenuDelete;
+            txt = DL_DELETE; //"Delete";
+            flags = EEikMenuItemSeparatorAfter;
+            },
+        MENU_ITEM
+            {
+            command = EDataViewMenuHeader;
+            txt = DL_HEADER; //"Header";
+            },
+        MENU_ITEM
+            {
+            command = EDataViewMenuSort;
+            txt = DL_SORT; //"Sort";
+            },
+        MENU_ITEM
+            {
+            command = EDataViewMenuPages;
+            txt = DL_PAGES; //"Pages";
+            },
+        MENU_ITEM
+            {
+            command = EDataViewMenuFilters;
+            cascade = r_data_view_main_menu_filters;
+            txt = DL_FILTERS; //"Filters";
+            },
+        MENU_ITEM
+            {
+            command = EDataViewMenuELookup;
+            txt = DL_LOOK_UP; //"Look Up";
+            },
+        MENU_ITEM
+            {
+            command = EDataViewMenuExternal;
+            cascade = r_data_view_main_menu_external;
+            txt = DL_EXTERNAL_DATA; //"External Data";
+            }
+        };
+    }
+
+RESOURCE MENU_PANE r_data_view_main_menu_filters
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EDataViewMenuFiltersAdd;
+            txt = DL_NEW; //"New";
+            },
+
+        MENU_ITEM
+            {
+            command = EDataViewMenuFiltersRemove;
+            txt = DL_DELETE; //"Delete";
+            }
+        };
+    }
+
+RESOURCE MENU_PANE r_data_view_main_menu_external
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EDataViewMenuExternalImport;
+            txt = DL_IMPORT_CSV_FILE; //"Import CSV File";
+            },
+
+        MENU_ITEM
+            {
+            command = EDataViewMenuExternalExport;
+            txt = DL_EXPORT_CSV_FILE; //"Export CSV File";
+            },
+        MENU_ITEM
+            {
+            command = EDataViewMenuExternalUndoImport;
+            txt = DL_UNDO_LAST_IMPORT; //"Undo last import";
+            },
+        MENU_ITEM
+            {
+            command = EDataViewMenuExternalSeparator;
+            txt = DL_FIELD_SEPARATOR; //"Field separator";
+            }
+
+        };
+    }
+
+// ---------------------------------------------------------
+//
+//	r_data_view_field_edit_form_dialog
+//
+// ---------------------------------------------------------
+//
+RESOURCE DIALOG r_data_view_field_edit_form_dialog
+	{
+	flags = EEikDialogFlagNoDrag |
+			EEikDialogFlagFillAppClientRect |
+			EEikDialogFlagNoTitleBar |
+			EEikDialogFlagWait |
+			EEikDialogFlagCbaButtons;
+	buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+	form = r_data_view_field_edit_form;
+	}
+
+RESOURCE FORM r_data_view_field_edit_form
+{
+	flags = EEikFormEditModeOnly;
+    
+}
+
+RESOURCE DIALOG r_data_view_field_edit_form_dialog_non_editable
+	{
+	flags = EEikDialogFlagNoDrag |
+			EEikDialogFlagFillAppClientRect |
+			EEikDialogFlagNoTitleBar |
+			EEikDialogFlagWait |
+			EEikDialogFlagCbaButtons;
+	buttons = R_AVKON_SOFTKEYS_BACK;
+	form = r_data_view_field_edit_form_non_editable;
+	}
+
+RESOURCE DIALOG r_data_view_field_edit_form_dialog_non_editable_woptions
+	{
+	flags = EEikDialogFlagNoDrag |
+			EEikDialogFlagFillAppClientRect |
+			EEikDialogFlagNoTitleBar |
+			EEikDialogFlagWait |
+			EEikDialogFlagCbaButtons;
+	buttons = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+	form = r_data_view_field_edit_form_non_editable;
+	}
+
+RESOURCE FORM r_data_view_field_edit_form_non_editable
+{
+    flags = EEikFormUseDoubleSpacedFormat;
+}
+
+RESOURCE ARRAY r_field_array_yes_no
+{
+    items =	{
+    LBUF	{ txt = DL_FIELD_ARRAY_YES_NO_01; },
+    LBUF	{ txt = DL_FIELD_ARRAY_YES_NO_01; }
+        };
+}
+//-----------------------------------------------------------------------------
+//    DataView form menu bar
+//-----------------------------------------------------------------------------
+//
+RESOURCE MENU_BAR r_data_view_form_menu_bar
+    {
+    titles =
+        {
+        MENU_TITLE
+            {
+            menu_pane = r_data_view_form_menu;
+            }
+        };
+    }
+
+RESOURCE MENU_PANE r_data_view_form_menu
+    {
+    items =
+        {
+        MENU_ITEM
+            {
+            command = EDataViewMenuFormMenuDial;
+            txt = DL_DIAL; //"Dial";
+            }
+        };
+    }
+
+//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+// Data View Form Special Controls
+//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+RESOURCE TIME_EDITOR r_data_view_field_edit_form_time_editor
+    {
+    minTime = TIME
+        {
+        second = 0;
+        minute = 0;
+        hour = 0;
+        };
+    maxTime = TIME
+        {
+        second = 59;
+        minute = 59;
+        hour = 23;
+        };
+    }
+
+RESOURCE DATE_EDITOR r_data_view_field_edit_form_date_editor
+    {
+    minDate = DATE
+        {
+        year = 1900;
+        };
+    maxDate = DATE
+        {
+        year = 2100;
+        };
+    }
+
+RESOURCE TIME_AND_DATE_EDITOR r_data_view_field_edit_form_date_time_editor
+    {
+    minTimeAndDate = DATE
+        {
+            year = 1900;
+        };
+    flags=EEikTimeWithoutSecondsField;
+	}
+
+RESOURCE POPUP_FIELD_TEXT r_data_view_field_edit_form_popup
+{
+  popupfield = POPUP_FIELD
+      {
+      width = 64;
+      };
+
+//  textarray = r_field_array_yes_no;
+  active = 0;
+}
+
+
+RESOURCE EDWIN r_data_view_field_edit_form_text_number
+{
+	lines = 1;
+	maxlength = 64;
+	avkon_flags = EAknEditorFlagNoT9;
+	default_case = EAknEditorLowerCase;
+	allowed_case_modes = EAknEditorUpperCase | EAknEditorLowerCase;
+	allowed_input_modes = EAknEditorTextInputMode | EAknEditorNumericInputMode;
+	default_input_mode = EAknEditorNumericInputMode;
+}
+
+/*
+RESOURCE EDWIN r_data_view_field_edit_form_float_text_number
+{
+	lines = 1;
+	maxlength = 64;
+	avkon_flags = EAknEditorFlagNoT9;
+	default_case = EAknEditorLowerCase;
+	allowed_case_modes = EAknEditorAllCaseModes;
+	allowed_input_modes = EAknEditorNumericInputMode;
+//	default_input_mode = EAknEditorNumericInputMode;
+    numeric_keymap = EAknEditorPlainNumberModeKeymap;
+}
+*/
+
+
+//RESOURCE POPUP_FIELD r_data_view_field_edit_form_popup
+//{
+//    width=64;
+//}
+
+// ---------------------------------------------------------
+//
+//	r_data_view Yes No Confirmation Dialog
+//
+// ---------------------------------------------------------
+/* NOT USED ?
+RESOURCE DIALOG r_data_view_confirmation_yes_no_dlg
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_YES_NO;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control = AVKON_CONFIRMATION_QUERY
+                {
+                layout = EConfirmationQueryLayout;
+//                label = "Just a test"; We give the label in runtime ...
+                };
+            }
+        };
+    }
+*/
+
+// ---------------------------------------------------------
+//
+//	r_data_view List dialog
+//
+// ---------------------------------------------------------
+RESOURCE DIALOG r_data_view_listdlg_dialog
+	{
+	flags = EAknDialogSelectionList;
+	buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+	items =
+		{
+		DLG_LINE
+			{
+			type = EAknCtSingleGraphicListBox; //EAknCtSingleHeadingListBox;
+			id = ESelectionListControl;
+			control = LISTBOX
+				{
+				flags = EAknListBoxSelectionList;
+				//array_id = r_listdlg_list_array;
+				};
+			},
+		DLG_LINE
+			{
+			itemflags = EEikDlgItemNonFocusing;
+			id = EFindControl;
+			type = EAknCtSelectionListFixedFind;
+			}
+		};
+	}
+
+RESOURCE DIALOG r_data_view_listdlg_dialog_no_search
+	{
+	flags = EAknDialogSelectionList;
+	buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+	items =
+		{
+		DLG_LINE
+			{
+			type = EAknCtSingleHeadingListBox;
+			id = ESelectionListControl;
+			control = LISTBOX
+				{
+				flags = EAknListBoxSelectionList;
+				};
+			}
+		};
+	}
+
+//-----------------------------------------------------------------------------
+//
+//    Data View List Query
+//
+//-----------------------------------------------------------------------------
+//
+RESOURCE DIALOG r_data_view_list_query
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtListQueryControl;
+            id = EListQueryControl;
+            control = AVKON_LIST_QUERY_CONTROL
+                {
+                listtype = EAknCtSinglePopupMenuListBox;
+                listbox = LISTBOX
+                    {
+                    flags = EAknListBoxMenuList;
+                    height = 3;
+                    width = 3;
+//                    array_id = r_aknexquery_list_single_pane_item;
+                    };
+                heading = DL_SELECT_HEADER;
+                };
+            }
+        };
+    }
+
+
+RESOURCE DIALOG r_data_view_list_query_multisel
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtListQueryControl;
+            id = EListQueryControl;
+            control = AVKON_LIST_QUERY_CONTROL
+                {
+                listtype = EAknCtSingleGraphicPopupMenuListBox;
+                listbox = LISTBOX
+                    {
+                    flags = EAknListBoxMultiselectionList;
+                    height = 3;
+                    width = 3;
+//                  array_id = r_aknexquery_multi_selection_query_list_item;
+                    };
+                 heading = "";
+                };
+            }
+        };
+    }
+
+
+//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+// Data View Arrays
+//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+
+RESOURCE ARRAY r_data_view_array_operation_simple
+{
+    items =	{
+    LBUF	{ txt = DL_ARRAY_OPERATION_01; },
+    LBUF	{ txt = DL_ARRAY_OPERATION_02; },
+    LBUF	{ txt = DL_ARRAY_OPERATION_03; },
+    LBUF	{ txt = DL_ARRAY_OPERATION_04; }
+        };
+}
+
+RESOURCE ARRAY r_data_view_array_operation_extra
+{
+    items =	{
+    LBUF	{ txt = DL_ARRAY_OPERATION_01; },
+    LBUF	{ txt = DL_ARRAY_OPERATION_02; },
+    LBUF	{ txt = DL_ARRAY_OPERATION_03; },
+    LBUF	{ txt = DL_ARRAY_OPERATION_04; },
+    LBUF	{ txt = DL_ARRAY_OPERATION_05; },
+    LBUF	{ txt = DL_ARRAY_OPERATION_06; },
+    LBUF	{ txt = DL_ARRAY_OPERATION_07; }
+        };
+}
+
+RESOURCE ARRAY r_data_view_array_delete_possibilities
+{
+    items =	{
+    LBUF	{ txt = DL_ARRAY_DELETE_POSSIBILITIES_01; },
+    LBUF	{ txt = DL_ARRAY_DELETE_POSSIBILITIES_02; }
+        };
+}
+
+/*
+RESOURCE EDWIN r_data_view_field_edit_form_float_text_number
+{
+//	width = 64;
+	lines = 1;
+	maxlength = 64;
+//	flags = EEikEdwinWidthInPixels;
+	avkon_flags = EAknEditorFlagNoT9;
+	default_case = EAknEditorLowerCase;
+	allowed_case_modes = EAknEditorUpperCase | EAknEditorLowerCase;
+	numeric_keymap = EAknEditorCalculatorNumberModeKeymap;
+
+//EAknEditorToFieldNumberModeKeymap; //EAknEditorPlainNumberModeKeymap; //EAknEditorStandardNumberModeKeymap; //EAknEditorFixedDiallingNumberModeKeymap; //EAknEditorConverterNumberModeKeymap; //EAknEditorCalculatorNumberModeKeymap;
+
+	allowed_input_modes = EAknEditorTextInputMode | EAknEditorNumericInputMode;
+	default_input_mode = EAknEditorNumericInputMode;
+	special_character_table = R_AVKON_SPECIAL_CHARACTER_TABLE_DIALOG;
+}
+*/
+//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+// Data View Strings
+//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+RESOURCE TBUF r_data_view_field_edit_form_text { buf = "DataView"; }
+RESOURCE TBUF r_data_view_str_none { buf = DL__str_none; }
+RESOURCE TBUF r_data_view_str_header { buf = DL__str_header; }
+RESOURCE TBUF r_data_view_str_sort { buf = DL__str_sort; }
+RESOURCE TBUF r_data_view_str_pages { buf = DL__str_pages; }
+RESOURCE TBUF r_data_view_str_data_report { buf = DL__str_data_report; }
+RESOURCE TBUF r_data_view_str_data_edition { buf = DL__str_data_edition; }
+RESOURCE TBUF r_data_view_str_select_operation { buf = DL__str_select_operation; }
+RESOURCE TBUF r_data_view_str_select_filter_to_del { buf = DL__str_select_filter_to_del; }
+RESOURCE TBUF r_data_view_str_delete { buf = DL__str_delete; }
+RESOURCE TBUF r_data_view_str_not_found { buf = DL__str_not_found; }
+RESOURCE TBUF r_data_view_str_error_updating_table { buf = DL__str_error_updating_table; }
+RESOURCE TBUF r_data_view_str_error_cannot_change_props { buf = "Cannot change name or type of an existing column !"; }
+
+#endif
